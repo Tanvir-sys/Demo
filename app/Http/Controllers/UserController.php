@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Models\User;
 
@@ -9,7 +8,8 @@ class UserController extends Controller
 {
     public function userList()
     {
-        if(User::userType=='0'){}
+
+        //need to show the paginate value on the blade
         $user=User::orderby('id','desc')->paginate(10);
         return view('Admin.userlist', compact('user')); //function for show user list
     }
