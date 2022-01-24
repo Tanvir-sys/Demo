@@ -63,11 +63,18 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
+                                    <a class="dropdown-item" href="{{ route('UserList') }}">{{ __('User List') }}</a>
 
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
+
+
+
+
+
+
                                 </div>
                             </li>
                             <li class="nav-item">
