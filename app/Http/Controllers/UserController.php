@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     public function userList(){
-        return view('');
+        return view('Admin.userlist');
     }
 }

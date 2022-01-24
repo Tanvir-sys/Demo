@@ -19,10 +19,31 @@ use Illuminate\Support\Facades\Auth;
 
 Auth::routes();
 
- Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
  Route::get('/', [App\Http\Controllers\Auth\LoginController::class, 'index'])->name('login');
  Route::post('/', [App\Http\Controllers\Auth\LoginController::class, 'login'])->name('forlogin');
- Route::get('/AdminHome', [App\Http\Controllers\AdminController::class, 'index'])->name('AdminHome');
 
 
+
+ Route::middleware('auth')->group(function () {
+
+//     Route::middleware('userType')->group(function () {
+
+            // Admin Route
+
+            Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+            Route::get('/AdminHome', [App\Http\Controllers\AdminController::class, 'index'])->name('AdminHome');
+            Route::get('/userList', [App\Http\Controllers\UserController::class, 'userList'])->name('UserList');
+
+
+
+
+
+            // task-Route
+
+
+
+
+        });
+    // });
