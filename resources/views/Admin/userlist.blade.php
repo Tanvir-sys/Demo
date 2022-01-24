@@ -27,21 +27,29 @@
                             <td>{{$user->email}}</td>
                             <td>{{$user->action}}</td>
                             <td>
-                                {{-- <div class="row">
+                                <div class="row">
                                     <div class="col-sm-2">
-                                    <a href="{{route(' ',$user->id)}}" class="btn btn-primary">Edit</a>
+                                    <a href="{{route('UserListupdate',$user->id)}}" class="btn btn-primary">Edit</a>
                                     </div>
-                                    <div class="col-sm-2"></div>
-                                <form action="{{route('  ', $user->id)}}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <input type="submit" class="btn btn-danger" name="submit" value="Delete" >
-                                    </form>
-                                </div> --}}
+                                    <div class="col-sm-2">
+
+                                        <form action="{{route('UserListdelete', $user->id)}}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <input type="submit" class="btn btn-danger" name="submit" value="Delete" >
+                                        </form>
+
+                                    </div>
+
+                                </div>
+
                             </td>
                         </tr>
+
+
                     @endforeach
                     @endif
+
 
 
                 </tbody>

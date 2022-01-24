@@ -46,6 +46,7 @@ Auth::routes();
             Route::get('/AdminHome', [App\Http\Controllers\AdminController::class, 'index'])->name('AdminHome');
             Route::get('/userList', [App\Http\Controllers\UserController::class, 'userList'])->name('UserList');
             Route::get('/update/{id}', [App\Http\Controllers\UserController::class, 'userListupdate'])->name('UserListupdate');
+            Route::post('/update/{id}', [App\Http\Controllers\UserController::class, 'userListupdatep'])->name('UserListupdatep');
             Route::delete('/delete/{id}', [App\Http\Controllers\UserController::class, 'userListdelete'])->name('UserListdelete');
 
         });
