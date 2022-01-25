@@ -19,6 +19,7 @@
 
                             <th scope="col">File Name</th>
                             <th scope="col">File</th>
+                            <th scope="col">Time</th>
 
                           </tr>
                         </thead>
@@ -29,6 +30,7 @@
                                 <th scope="row">{{ $file->name }}</th>
 
                                     <td>{{$file->file}}</td>
+                                    <td>{{$file->created_at}}</td>
 
                                     <td>
                                         <div class="row">

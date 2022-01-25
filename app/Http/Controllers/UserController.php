@@ -9,9 +9,9 @@ class UserController extends Controller
     public function userList()
     {
 
-        //need to show the paginate value on the blade
+
         $users=User::orderby('id','desc')->paginate(2);
-        return view('Admin.userlist', compact('users')); //function for show user list
+        return view('Admin.userlist', compact('users')); // for show user list
     }
 
     public function userListupdate($id){
@@ -21,7 +21,7 @@ class UserController extends Controller
 
     public function userListupdatep(Request $request,$id){
         $this->validate($request,[
-            'name'=>'required|string',
+            'name'=>'required|string',             //for validated userlist update
             'email'=>'required|email',
         ]);
         $user=User::find($id);
@@ -32,17 +32,13 @@ class UserController extends Controller
     }
 
     public function UserListdelete($id){
-        $user=User::find($id);
+        $user=User::find($id);                          //for user list deletion
         $user->delete();
         return redirect()->route('UserList')->with('success','User Delete');
     }
 
 
-    public function fileupload()
-    {
-         return view('');
 
-    }
 
 
 }

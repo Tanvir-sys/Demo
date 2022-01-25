@@ -22,7 +22,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index()                               // for showing uploaded file
     {
         $files=fileUpload::orderby('id','desc')->paginate(2);
         return view('home',compact('files'));
@@ -30,10 +30,10 @@ class HomeController extends Controller
     public function createFile(Request $request)
     {
         $data=new fileUpload;
-        if($request->file('file')){
+        if($request->file('file')){                      //upload file
             $file=$request->file('file');
             $filename=time().'.'.$file->getClientOriginalExtension();
-            $request->file->move('storage/'.$filename);
+            $request->file->move('storage/app',$filename);
             $data->file=$filename;
 
 
