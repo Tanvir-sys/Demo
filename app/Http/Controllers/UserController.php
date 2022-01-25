@@ -28,13 +28,13 @@ class UserController extends Controller
         $user->name=$request->name;
         $user->email=$request->email;
         $user->save();
-        return redirect()->route('UserList');
+        return redirect()->route('UserList')->with('success','User Updated');
     }
 
     public function UserListdelete($id){
         $user=User::find($id);
         $user->delete();
-        return redirect()->route('UserList');
+        return redirect()->route('UserList')->with('success','User Delete');
     }
 
 

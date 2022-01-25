@@ -8,6 +8,13 @@
                 <li class="breadcrumb-item"><a href=""></a></li>
                 <li class="breadcrumb-item active">List Of Users</li>
             </ol>
+
+            @if(session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+
+            @endif
             <table class="table">
                 <thead>
                   <tr>
