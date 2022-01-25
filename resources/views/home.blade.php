@@ -35,7 +35,7 @@
                                     <td>
                                         <div class="row">
                                             <div class="col-sm-2">
-                                            <a href="{{route('fileview',$file->id)}}" class="btn btn-primary">view</a>
+                                            <a href="{{route('fileview',$file->id)}}" class="btn btn-primary">Group</a>
                                             </div>
 
 
