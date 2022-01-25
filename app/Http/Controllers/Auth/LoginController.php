@@ -30,7 +30,7 @@ class LoginController extends Controller
 
 
         if(Auth::attempt(['email' =>$request->email, 'password' => $request->password]))
-        // in this section we check authentication ,Email,password,Usertype
+        // in this section  check authentication ,Email,password,Usertype
         {
             if(auth()->user()->userType =='1'){
 

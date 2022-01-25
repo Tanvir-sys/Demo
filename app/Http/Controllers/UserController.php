@@ -16,7 +16,7 @@ class UserController extends Controller
 
     public function userListupdate($id){
         $user=User::find($id);
-        return view('Admin.userlist',compact('user'));
+        return view('Admin.userupdate',compact('user'));
     }
 
     public function userListupdatep(Request $request,$id){
@@ -28,7 +28,7 @@ class UserController extends Controller
         $user->name=$request->name;
         $user->email=$request->email;
         $user->save();
-        return redirect()->route('Admin.userlist');
+        return redirect()->route('UserList');
     }
 
     public function UserListdelete($id){
