@@ -43,12 +43,14 @@ class LoginController extends Controller
             {
                 return redirect()->route('home');
 
-            }else {
+            }else{
                 return redirect()->route('login')->with('error','invalid credential');
             }
 
 
 
+        }else{
+            return redirect()->route('login')->with('error','invalid credential ,Please check Email And Password');
         }
 
 
@@ -57,6 +59,7 @@ class LoginController extends Controller
      }
 
     public function index(){
+
         return view("auth.login");
     }
 }
