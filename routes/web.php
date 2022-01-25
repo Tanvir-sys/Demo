@@ -33,8 +33,10 @@ Auth::routes();
     Route::group(['middleware'=>['protecteduser']],function(){
 
         Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-        Route::get('/fileUpload', [App\Http\Controllers\UserController::class, 'fileupload'])->name('fileupload');
-        Route::post('/filecreate', [App\Http\Controllers\UserController::class, 'createFile'])->name('create');
+
+        Route::get('/fileUpload', [App\Http\Controllers\HomeController::class, 'fileupload'])->name('fileupload');
+        Route::post('/filecreate', [App\Http\Controllers\HomeController::class, 'createFile'])->name('create');
+        Route::get('/filview/{id}', [App\Http\Controllers\HomeController::class, 'fileview'])->name('fileview');
 
     });
 
