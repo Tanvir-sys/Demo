@@ -26,8 +26,8 @@
                   </tr>
                 </thead>
                 <tbody>
-                    @if (count($user)>0)
-                     @foreach ($user as $user)
+                    @if (count($users)>0)
+                     @foreach ($users as $user)
                         <tr>
                         <th scope="row">{{ $user->name }}</th>
 
@@ -54,13 +54,23 @@
                         </tr>
 
 
+
+
                     @endforeach
+
+
+
+
                  @endif
 
 
 
                 </tbody>
+
+
               </table>
+              <div class="container"><button class="btn btn-link">{{$users->links('pagination::bootstrap-4')}}</button></div>
+
     </main>
 
 

@@ -10,8 +10,8 @@ class UserController extends Controller
     {
 
         //need to show the paginate value on the blade
-        $user=User::orderby('id','desc')->paginate(10);
-        return view('Admin.userlist', compact('user')); //function for show user list
+        $users=User::orderby('id','desc')->paginate(2);
+        return view('Admin.userlist', compact('users')); //function for show user list
     }
 
     public function userListupdate($id){

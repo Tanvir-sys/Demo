@@ -34,14 +34,14 @@ class LoginController extends Controller
         {
             if(auth()->user()->userType =='1'){
 
-                return redirect()->route('AdminHome');
+                return redirect()->route('AdminHome')->with('success','Admin Login Successful');
 
             }
 
 
             elseif(auth()->user()->userType =='0')
             {
-                return redirect()->route('home');
+                return redirect()->route('home')->with('success','User Login Successful');;
 
             }else{
                 return redirect()->route('login')->with('error','invalid credential');
